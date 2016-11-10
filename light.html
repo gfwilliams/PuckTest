@@ -17,14 +17,12 @@
     // Get the actual curve inside the SVG. You could make differemt
     // parts of a more complex SVG do different things...
     var path = document.getElementsByTagName('path')[0];
-    // Make sure your mouse cursor turns into a hand when over it
-    path.fill="#BBB";
-    // Grey it out
-    path.style="cursor:pointer";
+    // Make sure your mouse cursor turns into a hand when over it, and gray it out
+    path.style="cursor:pointer;fill:#BBB";
     
     function getLightValue() {
       Puck.eval("Puck.light()", function(v) {
-        path.fill="rgb("+(v*255)+",0,0)";
+        path.style.fill="rgb("+(v*255)+",0,0)";
         setTimeout(function() {
           getLightValue();
         }, 250);
