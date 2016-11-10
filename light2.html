@@ -21,6 +21,7 @@
     path.style="cursor:pointer;fill:#BBB";
     
     function onLine(v) {
+      console.log("Received: "+JSON.stringify(v));
       path.style.fill="rgb("+Math.round(v*255)+",0,0)";
     }
     
@@ -45,7 +46,7 @@
         });
         connection.write(
          "reset();\n"+
-         "setInterval(function(){console.log(Puck.light());},100);\n",
+         "setInterval(function(){Bluetooth.write(Puck.light());},100);\n",
           function() { console.log("Ready..."); });
       });
     });
