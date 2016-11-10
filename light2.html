@@ -43,7 +43,9 @@
             i = buf.indexOf("\n");
           }
         });
-        connection.write("reset();\nsetInterval(function(){console.log(Puck.light());},100);\n"
+        connection.write(
+         "reset();\n"+
+         "setInterval(function(){console.log(Puck.light());},100);\n");
       });
     });
   </script>
