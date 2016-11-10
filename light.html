@@ -24,7 +24,7 @@
     
     function getLightValue() {
       Puck.eval("Puck.light()", function(v) {
-        path.fill="rgb("+v+",0,0)";
+        path.fill="rgb("+(v*255)+",0,0)";
         setTimeout(function() {
           getLightValue();
         }, 250);
