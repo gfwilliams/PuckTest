@@ -44,10 +44,12 @@
             i = buf.indexOf("\n");
           }
         });
-        connection.write(
-         "reset();\n"+
-         "setInterval(function(){Bluetooth.write(Puck.light());},100);\n",
-          function() { console.log("Ready..."); });
+        connection.write("reset();\n", function() {
+          setTimeout(function() {
+            connection.write("setInterval(function(){Bluetooth.write(Puck.light());},100);\n",
+              function() { console.log("Ready..."); });
+          }, 1000);
+        });
       });
     });
   </script>
