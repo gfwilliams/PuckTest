@@ -45,7 +45,8 @@
         });
         connection.write(
          "reset();\n"+
-         "setInterval(function(){console.log(Puck.light());},100);\n");
+         "setInterval(function(){console.log(Puck.light());},100);\n",
+          function() { console.log("Ready..."); });
       });
     });
   </script>
